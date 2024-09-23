@@ -1,0 +1,146 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+}
+
+
+
+#enrollment-history {
+    margin-top: 30px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+table, th, td {
+    border: none;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+thead {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+th {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+td {
+    font-size: 14px;
+    color: #555;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #profile-details {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    #profile-img {
+        width: 120px; 
+        height: 120px; 
+        margin-bottom: 15px;
+    }
+
+    #profile-info h1 {
+        font-size: 24px; 
+    }
+
+    #profile-info p {
+        font-size: 14px; 
+    }
+
+    table, th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+.card {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+p {
+    margin: 5px 0;
+}
+.enhis{
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="porfile.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <!-- <div id="navbar">
+
+        </div> -->
+        <nav>
+            
+            
+            <a href="index.html" class="btn">Home</a>
+            <a href="register.html" class="btn">Signup</a>
+            <a href="login.html" class="btn">Login</a>
+            
+            
+            <a class="btn" id="logout-button" onclick="handleLogout()">Logout</a>
+        </nav>
+    </header>
+    <div id="student-details" class="card">
+        <div id="student-profile" class="card-content">
+            <img id="student-image" src="" alt="Student Image" class="profile-image">
+            <div class="student-info">
+                <h2 id="student-name">Please Login Or Register</h2>
+                <p id="student-email">Email: example@example.com</p>
+                <p id="student-username">Username: exampleUser</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="history-container">
+        <h2 class="enhis">Enrollment History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Description</th>
+                    <th>Department</th>
+                    <th>Teacher</th>
+                    <th>Date Enrolled</th>
+                </tr>
+            </thead>
+            <tbody id="history-table-body">
+               
+            </tbody>
+        </table>
+    </div>
+
+
+    <footer id="footer" class="footer">
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">About Us</h3>
+                    <p>Learn anytime, anywhere with our flexible online courses. Enhance your skills with expert instruction and interactive content.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#about-us-section">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#blog-section">Blog</a></li>
+                        <!-- <li><a href="#contact-us-section">Contact</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fa fa-envelope"></i> mahmudulabin@gmail.com</li>
+                        <li><i class="fa fa-phone"></i> +880 1780946249</li>
+                        <li><i class="fa fa-map-marker"></i> Dinajpur,5200,Dhaka</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024 LearnNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="profile.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
