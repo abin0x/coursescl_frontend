@@ -21,7 +21,7 @@
             <span><i class="fas fa-map-marker-alt"></i> Dinajpur, Rangpur, 5400</span>
         </div>
         <div class="user-info">
-            <a href="register.html" class="login-register"><i class="fas fa-user"></i> Login/Register</a>
+            <!-- <a href="register.html" class="login-register"><i class="fas fa-user"></i> Login/Register</a> -->
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -44,13 +44,22 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#blog-section">Blog</a></li>
                 <li><a href="#contacts-us-section">Contact Us</a></li>
-                <li><a href="profile.html">Profile</a></li>
+                <!-- <li><a href="profile.html">Profile</a></li> -->
             </ul>
             <div class="contact-us">
-                <a href="teacher_dashboard.html" class="contact-btn">Become A Teacher</a>
+                <div class="dropdown" id="dashboard-dropdown" style="display: none;">
+                    <button class="dropbtn">Dashboard</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Student</a>
+                        <a href="teacher_dashboard.html">Teacher</a>
+                    </div>
+                </div>
+                <button id="login-register-button" class="lr" style="display: block;">Login/Register</button>
             </div>
         </nav>
     </header>
+    
+    
 
     <main>
         <section class="hero-section">
@@ -399,6 +408,7 @@
     <script src="./blog.js"></script>
     <script src="./team.js"></script>
     <script src="./reviews.js"></script>
+    <script src="./js/na.js"></script>
 </body>
 
 </html>

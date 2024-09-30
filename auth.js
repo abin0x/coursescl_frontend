@@ -142,15 +142,17 @@ if (document.getElementById('logout-button')) {
 }
 
 // Check authentication status
-const checkAuthStatus = () => {
-  const token = localStorage.getItem('authToken');
-  if (token) {
-    document.getElementById('login-link').style.display = 'none';
-    document.getElementById('logout-button').style.display = 'block';
-  } else {
-    document.getElementById('login-link').style.display = 'block';
-    document.getElementById('logout-button').style.display = 'none';
-  }
-};
+// const checkAuthStatus = () => {
+//   const token = localStorage.getItem('authToken');
+//   if (token) {
+//     document.getElementById('login-link').style.display = 'none';
+//     document.getElementById('logout-button').style.display = 'block';
+//   } else {
+//     document.getElementById('login-link').style.display = 'block';
+//     document.getElementById('logout-button').style.display = 'none';
+//   }
+// };
 
-checkAuthStatus();
+// checkAuthStatus();
+
+
