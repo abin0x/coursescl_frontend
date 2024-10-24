@@ -24,5 +24,11 @@ function sendEmail(event) {
 
 
 
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
 
+  navLinks.classList.toggle('active'); // Toggle the navigation menu
+  menuToggle.classList.toggle('active'); // Rotate the hamburger icon
+}
 
