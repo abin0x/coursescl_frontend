@@ -2,6 +2,7 @@
 
 ## Overview 🌐
 The **Online School** is an e-learning platform that offers a variety of courses for learners. This platform includes essential features such as course modules, quizzes, resources, and instructor interactions, allowing users to enroll in courses, learn at their own pace, and track their progress effectively.
+<p align="center"><img src="https://i.ibb.co.com/Q6vcrjq/77912647-e7bb-46fa-ab03-3155bd34d828.png" alt="project-image"></p>
 
 ## Features ✨
 
