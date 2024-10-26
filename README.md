@@ -58,27 +58,3 @@ The **Online School** is an e-learning platform that offers a variety of courses
 
 ---
 
-### Animation Styles 💫
-To enhance your README visually when converted to HTML (or used in a web format), consider adding the following animations using CSS:
-
-- **Fade-In Animation:** For section headings, you can apply a fade-in effect when the page loads.
-- **Hover Effects:** Add hover effects to the links or buttons that change color or scale slightly to provide a responsive feel.
-- **Scroll Animations:** Elements could slide in from the side as they come into view when scrolling down the page.
-
-Example CSS for animations:
-```css
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.hover-effect:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
-}
