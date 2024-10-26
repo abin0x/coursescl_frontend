@@ -53,7 +53,7 @@ The **Online School** is an e-learning platform that offers a variety of courses
 - Allow teachers to view enrollment statistics for their courses.
 
 ## Deployment 🌍
-The project is deployed on **Render**, providing a reliable platform for hosting web applications.
+The project is deployed on **Vercel**, providing a reliable platform for hosting web applications.
 
 ## Tech Stack 🛠️
 - **Django**: Django framework and its template engine for backend development.
