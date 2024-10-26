@@ -1,7 +1,6 @@
 # Online School Project 🎓
 
 ## Overview 🌐
-![Online School Project](https://ibb.co.com/99B1zJC)
 The **Online School** is an e-learning platform that offers a variety of courses for learners. This platform includes essential features such as course modules, quizzes, resources, and instructor interactions, allowing users to enroll in courses, learn at their own pace, and track their progress effectively.
 
 ## Features ✨
