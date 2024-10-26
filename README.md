@@ -52,11 +52,7 @@ The **Online School** is an e-learning platform that offers a variety of courses
 - Update the course detail view to include the enrollment count.
 - Allow teachers to view enrollment statistics for their courses.
 
-## Installation
 
-To get started with the project, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd online-school
+### Notes:
+- Customize the **Overview** and **Features** sections to reflect the specifics of your project if necessary.
+- Ensure that you include a `LICENSE` file if you mention licensing in your README. If you need assistance with that, feel free to ask!
