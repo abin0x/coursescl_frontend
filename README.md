@@ -52,9 +52,23 @@ The **Online School** is an e-learning platform that offers a variety of courses
 - Update the course detail view to include the enrollment count.
 - Allow teachers to view enrollment statistics for their courses.
 
+## Deployment 🌍
+The project is deployed on **Render**, providing a reliable platform for hosting web applications.
+
+## Tech Stack 🛠️
+- **Django**: Django framework and its template engine for backend development.
+- **SQLite**: SQLite as the database for storing data.
+- **Bootstrap**: CSS framework for responsive and modern UI design.
+- **HTML/CSS**: HTML and CSS for markup and styling.
+
 ## Notes 📝
 - Customize the **Overview** and **Features** sections to reflect the specifics of your project if necessary.
 - Ensure that you include a `LICENSE` file if you mention licensing in your README. If you need assistance with that, feel free to ask!
 
 ---
 
+
+### Summary:
+- The **Deployment** section indicates where the project is hosted.
+- The **Tech Stack** section outlines the technologies used in the project.
+- All sections have been organized for clarity, and you can easily customize any part as needed!
