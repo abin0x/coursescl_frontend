@@ -10,21 +10,12 @@
 <body>
     <header>
         <h1>Student Dashboard</h1>
-        <!-- <div id="navbar">
-
-        </div> -->
         <nav>
-            
-            
             <a href="index.html" class="btn">Home</a>
-            <!-- <a href="register.html" class="btn">Signup</a> -->
-            <!-- <a href="login.html" class="btn">Login</a> -->
-            
-            
             <a class="btn" id="logout-button" onclick="handleLogout()">Logout</a>
         </nav>
     </header>
-    <div id="student-details" class="card">
+    <!-- <div id="student-details" class="card">
         <div id="student-profile" class="card-content">
             <img id="student-image" src="" alt="Student Image" class="profile-image">
             <div class="student-info">
@@ -33,29 +24,36 @@
                 <p id="student-username">Username: exampleUser</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="history-container">
-        <h2 class="enhis">Enrollment History</h2>
-        <table>
+        <h2 class="enhis">Order List</h2>
+        <table id="order-table">
             <thead>
                 <tr>
+                    <th>Order ID</th>
                     <th>Course Title</th>
-                    <th>Description</th>
-                    <th>Department</th>
                     <th>Teacher</th>
-                    <th>Date Enrolled</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Order Date</th>
+                    <th>Ordered</th>
                 </tr>
             </thead>
-            <tbody id="history-table-body">
-               
+            <tbody>
+                <!-- Order rows will be populated here -->
             </tbody>
         </table>
     </div>
 
-
+    <!-- <div id="payment-modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Enroll in <span id="modal-course-title"></span></h2>
+        <p>Price: <span id="modal-course-price"></span></p>
+        <button id="checkout-button">Checkout</button>
+    </div> -->
+    
     <footer id="footer" class="footer">
-        
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -70,7 +68,6 @@
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#blog-section">Blog</a></li>
-                        <!-- <li><a href="#contact-us-section">Contact</a></li> -->
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -98,5 +95,6 @@
     </footer>
     <script src="profile.js"></script>
     <script src="auth.js"></script>
+    <!-- <script src="try.js"></script>  -->
 </body>
 </html>

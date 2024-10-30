@@ -1,96 +1,115 @@
+// Fetch course details and display them
 document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = urlParams.get('id');
-    const courseDetailsUrl = `https://scl-nine.vercel.app/api/courses/${courseId}`;
-    const enrollUrl = 'https://scl-nine.vercel.app/api/enroll/';
 
-    // Fetch course details
+    const courseDetailsUrl = `https://scl-nine.vercel.app/api/courses/${courseId}`;
+
+    // Fetch course details from the API
     fetch(courseDetailsUrl)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error fetching course details');
+            }
+            return response.json();
+        })
         .then(data => {
+            // Populate course details on the page
             document.getElementById('course-title').textContent = data.title;
             document.getElementById('course-description').textContent = data.description;
             document.getElementById('course-rating').textContent = `⭐ ${data.rating || 'N/A'}`;
 
-            const imageUrl = data.image_url ? data.image_url : 'default-image-url'; 
+            // Handle image URLs from imgBB
+            const imageUrl = data.image_url || 'default-image-url'; 
             document.getElementById('course-img').src = imageUrl;
             document.getElementById('course-img').alt = data.title;
 
             document.getElementById('sidebar-img').src = imageUrl;
             document.getElementById('sidebar-img').alt = data.title;
+
+            const price = data.price || 'N/A';
+            const originalPrice = data.original_price || '10000';
+            document.querySelector('.course-fee').innerHTML = `
+                <p>Course Fee</p>
+                <p><span>$${price}</span> <s>$${originalPrice}</s></p>
+                <p>29-Day Money-Back Guarantee</p>
+            `;
         })
         .catch(error => {
             console.error('Error fetching course details:', error);
+            alert('Could not load course details. Please try again later.'); // User-friendly error message
         });
 
-    // Handle enrollment
+    // Handle enroll button click to show the payment modal
     document.getElementById('enroll-button').addEventListener('click', function () {
-        const authToken = localStorage.getItem('authToken');
+        const modal = document.getElementById('payment-modal');
+        const modalCourseTitle = document.getElementById('modal-course-title');
+        const modalCoursePrice = document.getElementById('modal-course-price');
 
+        // Populate modal with course details
+        modalCourseTitle.textContent = document.getElementById('course-title').textContent;
+        modalCoursePrice.textContent = `Price: $${document.querySelector('.course-fee span').textContent}`;
+
+        modal.style.display = 'flex'; // Show the modal
+        document.body.style.overflow = 'hidden'; // Prevent scrolling on the body
+    });
+
+    // Handle close modal action
+    document.querySelector('.close').addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Close modal function
+    function closeModal() {
+        document.getElementById('payment-modal').style.display = 'none'; // Hide the modal
+        document.body.style.overflow = 'auto'; // Restore body scrolling
+    }
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener('click', function (event) {
+        const modal = document.getElementById('payment-modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Handle proceed to payment button click in the modal
+    document.getElementById('proceed-payment-button').addEventListener('click', function () {
+        const authToken = localStorage.getItem('authToken'); // Ensure this key is correct
+
+        // Check if the token exists
         if (!authToken) {
-            alert('Please log in or sign up to enroll in a course.');
-            window.location.href = 'login.html';  // Redirect to login page if not authenticated
+            alert('You must be logged in to initiate payment.');
+            window.location.href = 'login.html'; // Redirect to login page if not authenticated
             return;
         }
 
-        const csrfToken = getCookie('csrftoken');
+        const paymentUrl = `https://scl-nine.vercel.app/api/initiate-payment/${courseId}/`;
 
-        fetch(enrollUrl, {
+        // Initiate payment
+        fetch(paymentUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken,
-                'Authorization': `Token ${authToken}`
-            },
-            body: JSON.stringify({ course_id: courseId })
+                'Authorization': `Token ${authToken}` // Include the auth token
+            }
         })
         .then(response => {
-            if (response.ok) {
-                return response.json();
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
             }
-            return response.json().then(error => Promise.reject(error));
+            return response.json();
         })
         .then(data => {
-            showModal('You have successfully enrolled in the course!');
+            if (data.payment_url) {
+                window.location.href = data.payment_url; // Redirect to the payment URL
+            } else {
+                alert('Payment initiation failed: ' + data.error); // Display error from server
+            }
         })
         .catch(error => {
-            console.error('Error enrolling in course:', error);
-            showModal('Sorry!! You have already enrolled in this course. Please try enrolling in another course. Thank You!!');
+            console.error('Payment initiation failed:', error);
+            alert('Payment initiation failed: ' + error.message); // User-friendly error message
         });
     });
-
-    // Helper function to get CSRF token from cookies
-    function getCookie(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-
-    // Modal functionality
-    const modal = document.getElementById('enrollment-modal');
-    const closeBtn = document.querySelector('.modal .close');
-
-    const showModal = (message) => {
-        document.getElementById('modal-message').textContent = message;
-        modal.style.display = 'block';
-    };
-
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
 });

@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Details</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="stylesheet" href="styles.css">
+     <!-- <link rel="stylesheet" href="detail.css"> -->
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="./images/final (1).png" alt="Educate Logo"></a>
-                <h1>LearnNest</h1> 
+                <a href="index.html"><img src="./images/4.png" alt="Educate Logo"></a>
+                <h1>Educate</h1> 
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">About Us</a></li>
-                <li><a href="index.html">Course</a></li>
-                <li><a href="index.html">Services</a></li>
-                <li><a href="index.html">Team</a></li>
-                <li><a href="index.html">Blog</a></li>
-                <li><a href="index.html">Contact Us</a></li>
+                <li><a href="#about-us-section">About Us</a></li>
+                <li><a href="#courses">Course</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#blog-section">Blog</a></li>
+                <li><a href="#contact-us-section"">Contact Us</a></li>
             </ul>
             <div class="contact-us">
-                <a href="teacher_dashboard.html" class="contact-btn">Become A Teacher</a>
+                <a href="#" class="contact-btn">Contact Us</a>
             </div>
         </nav>
+        
     </header>
 
     <div class="course-details-container">
@@ -50,7 +50,7 @@
 
         <aside class="sidebar">
             <div class="sidebar-image">
-                <img id="sidebar-img" alt="Course Image">
+                <img id="sidebar-img" alt="Course Imaaage">
             </div>
             <div class="course-fee">
                 <p>Course Fee</p>
@@ -68,49 +68,44 @@
             </div>
         </aside>
     </div>
+    <!-- Courses section  -->
+    <section id="courses" class="courses-section ">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our World Class Best Courses</h2>
+                <p>Courses World Class dolor sit consectetur Malesuada sed diam in the aliquam Pathw.</p>
+                <a href="#" class="btn view-all-courses">View All Course</a>
+            </div>
+            
+            <div class="filter-container">
+                <label for="department-filter">Filter by Department:</label>
+                <select id="department-filter">
+                    <option value="">All Departments</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Art And Design">Art And Design</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <!-- Add more departments as needed -->
+                </select>
+            </div>
 
-   <!-- Courses section  -->
-   <section id="courses" class="courses-section ">
-    <div class="container">
-        <div class="section-header">
-            <h2>Join Our World Class Best Courses</h2>
-            <p>Courses World Class dolor sit consectetur Malesuada sed diam in the aliquam Pathw.</p>
-            <a href="#" class="btn view-all-courses">View All Course</a>
+            <div id="course-list" class="course-cards">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+        </div>
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-course-title">Modal Course Title</h2>
+                <p id="modal-course-price">Modal Course Price</p>
+                <button id="proceed-payment-button">Proceed to Payment</button>
+            </div>
         </div>
         
-        <div class="filter-container">
-            <label for="department-filter">Filter by Department:</label>
-            <select id="department-filter">
-                <option value="">All Departments</option>
-                <option value="Artificial Intelligence">Artificial Intelligence</option>
-                <option value="Art And Design">Art And Design</option>
-                <option value="Data Science">Data Science</option>
-                <option value="Business Administration">Business Administration</option>
-                <option value="Computer Science">Computer Science</option>
-                <!-- Add more departments as needed -->
-            </select>
-        </div>
-
-        <div id="course-list" class="course-cards">
-            <!-- Courses will be dynamically loaded here -->
-        </div>
-    </div>
-</section>
-
-
-    <div id="enrollment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">
-                <!-- SVG close icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M19.293 4.707a1 1 0 0 0-1.414 0L12 10.586 6.121 4.707a1 1 0 0 0-1.414 1.414L10.586 12l-5.879 5.879a1 1 0 0 0 1.414 1.414L12 13.414l5.879 5.879a1 1 0 0 0 1.414-1.414L13.414 12l5.879-5.879a1 1 0 0 0 0-1.414z"/>
-                </svg>
-            </span>
-            <p id="modal-message">Sorry!! You have already enrolled in this course, You try to enroll in another course. Thank You!!</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
+    </section>
+    <hr>
+    <!-- footer  -->
     <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-content">
@@ -126,6 +121,7 @@
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#blog-section">Blog</a></li>
+                        <!-- <li><a href="#contact-us-section">Contact</a></li> -->
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -151,8 +147,7 @@
             </div>
         </div>
     </footer>
-    <script defer src="course-details.js"></script>
-    <script defer src="enrollment-history.js"></script>
-    <script src="courses.js"></script>
+    <script src="course-details.js"></script>
+    <script src="./courses.js"></script>
 </body>
 </html>

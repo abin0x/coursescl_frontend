@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h3>${course.title}</h3>
                     <p>${description}</p>
                     <p>Department: ${course.department}</p>
+                    <p>Price: ${course.price}</p>
                     <p>Instructor: ${course.teacher.first_name} ${course.teacher.last_name}</p>
                     
                     <a href="course-details.html?id=${course.id}" class="enroll-now" data-id="${course.id}">Enroll Now →</a>
